@@ -1,25 +1,3 @@
-// const contenedor = document.getElementById("container");
-// const consumoApi = () => {
-//     const url = "https://jsonplaceholder.typicode.com/users";
-//     fetch(url)
-//     .then(response => response.json())
-//     .then(res =>  {
-//         res.forEach(user => {
-//             const {id, name, email, phone, website} = user;
-//             const div = document.createElement("div");
-//             div.innerHTML = `
-//             <p>${id}</p>
-//             <p>${name}</p>
-//             <p>${email}</p>
-//             <p>${phone}</p>
-//             <p>${website}</p>
-//             `;
-//             contenedor.appendChild(div);
-//         })
-//     });
-// }
-// consumoApi();
-
 // Github de API gratuitas
 // https://github.com/public-apis/public-apis
 
@@ -36,7 +14,8 @@ const URL = `https://api.thecatapi.com/v1/images/search${querystring}`;
 
 let API_URL_RANDOM = "https://api.thedogapi.com/v1/images/search?limit=2" 
 let API_URL_FAVORITES = "https://api.thedogapi.com/v1/favourites" 
-let API_URL_FAVORITES_DELETE = (id) => `https://api.thedogapi.com/v1/favourites/${id}` 
+let API_URL_FAVORITES_DELETE = (id) => `https://api.thedogapi.com/v1/favourites/${id}`
+let API_URL_UPLOADIMAGE = "https://api.thedogapi.com/v1/images/upload"
 
 const spanError = document.getElementById("error");
 
@@ -144,6 +123,35 @@ async function DeleteFavoriteDog(id){
         LoadFavoritesDogs();
     }
 }
+
+async function uploadPhotoPerro(){
+    const form = document.getElementById("uploadingForm");
+    const formData = new FormData(form);
+    console.log(formData.get('file'));
+
+    const rest = await fetch(API_URL_UPLOADIMAGE,{
+        method: "POST",
+        headers: {
+            //'Content-Type': 'multipart/form-data',
+            'X-API-KEY': 'd7e5c5bd-fbb0-494a-8e0c-4cadf28397d0',
+        },
+        body: formData
+    });
+    const data = await rest.json();
+    
+    if (rest.status !== 201) {
+        spanError.innerHTML = `Hubo un error al subir michi: ${rest.status} ${data.message}`
+    }
+    else {
+        console.log("Foto de michi cargada :)");
+        console.log({ data });
+        console.log(data.url);
+        saveFavoriteDog(data.id) //para agregar el michi cargado a favoritos.
+    }
+}
+
+
+
 
 LoadRandomDogs();
 LoadFavoritesDogs();
