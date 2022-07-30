@@ -73,10 +73,9 @@ footer{
 
 .container-random-dogs{
     background-color: #082032;
-    width: 100%;
+    width: 75%;
     display: flex;
-    
-    
+    margin: auto;
     place-content: center;
     padding-top: 20px;
     padding-bottom: 20px;
@@ -100,7 +99,7 @@ footer{
   #item-container{
     display: flex;
     justify-content: space-evenly;
-    width: 100%;
+    max-width: 100%;
     flex-wrap: wrap;
   }
 
@@ -132,7 +131,7 @@ footer{
   }
   
 .container-favorites-dogs{
-  margin: 50px  auto;
+  margin: 50px 10px 1px 0px;
   display: grid;
   grid-template-columns: 32.5% 32.5% 32.5%;;  
   gap: 10px;
