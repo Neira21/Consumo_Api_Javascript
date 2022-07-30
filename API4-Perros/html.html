@@ -6,56 +6,104 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ConsumoDeApis-Platzi</title>
     <link rel="stylesheet" href="css.css">
+    <script
+      src="https://kit.fontawesome.com/10b9adabac.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Mukta:wght@400;600&family=Roboto:ital,wght@0,500;1,300;1,500&display=swap"
+      rel="stylesheet"
+    />
 </head>
 <body>
     <h1>Consumo de Apis - Imagen aleatoria Perros</h1>
     <p>Enlace de la documentación del API: <a href="https://docs.thedogapi.com/"> Click acá para la documentación de la API </a></p>
 
-    <span id="error"></span>
+    <header>
+        <h1>
+          <i class="fa-solid fa-paw"></i> Imagen Perros
+          <i class="fa-solid fa-paw"></i>
+        </h1>
+        <span id="error"></span>
+    </header>
 
-    <section id="randomDogs">
-        <h2>Perros Aleatorios</h2>
-        <article>
-            <div>
-                <button id="btn1">
-                    Guardar Imagen en favoritos
-                </button>
+    <div id="container">
+
+        
+            
+            <div class="titulo">
+                <h2><i class="fa-solid fa-dog"></i> Perros aleatorios</h2> 
             </div>
-            <img id="img1" width = 200px height="200px" alt="Foto Perro Aleatorio">
-        </article>
-        <article>
-            <div>
-                <button id="btn2">
-                    Guardar Imagen en favoritos
-                </button>
-            </div>
-            <img id="img2" width = 200px height="200px" alt="Foto Perro Aleatorio">
-        </article>
-        <div>
-            <button onclick="LoadRandomDogs()">Recargar</button>
-        </div>
-    </section>
+            
+            <section id="randomDogs" class="container-random-dogs">
+                <article id="item-container">
+                    <img id="img1" alt="Foto Perro Aleatorio">
+                    <div>
+                        <button id="btn1">
+                            Guardar Imagen en favoritos
+                        </button>
+                    </div>
+                </article>
+                <article id="item-container">
+                    
+                    <img id="img2" alt="Foto Perro Aleatorio">
+                    <div>
+                        <button id="btn2">
+                            Guardar Imagen en favoritos
+                        </button>
+                    </div>
+                </article>
+                <article id="item-container">   
+                    <img id="img3" alt="Foto Perro Aleatorio">
+                    <div>
+                        <button id="btn3">
+                            Guardar Imagen en favoritos
+                        </button>
+                    </div>
+                </article>
+
+                
+            </section>
+            <button id="reload-button" onclick="LoadRandomDogs()">Recargar</button>    
+            
+            <hr>
+<br><br><br>
+            <h2><i class="fa-solid fa-dog"></i> Sube una foto de tu perro</h2>
+            <section id="uploadingMichi">
+                <form id="uploadingForm">
+                    <input id="file" type="file" name="file">
+                    <button type="button" onclick="uploadPhotoPerro()">Subir foto del perro</button>
+                </form>
+            </section>
+<hr>
+<br><br><br>
+
+            <h2><i class="fa-solid fa-dog"></i> Perros favoritos</h2>
+            <section id="favoritesDogs" class="container-favorites-dogs">
+                
+            </section>
+
+    </div>
+
+        <footer>
+            <p>Made by Jeison Sang Wu Mitre</p>
+            <ul class="footer-contact">
+            <li>
+                <a href="https://github.com/Neira21">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.linkedin.com/in/alvaro-neira-0129771b6/">
+                    <i class="fa-brands fa-linkedin"></i
+                ></a>
+            </li>
+            </ul>
+        </footer>
+
     
-    <section id="uploadingMichi">
-        <h2>Sube una foto de tu perro</h2>
-        <form id="uploadingForm">
-            <input id="file" type="file" name="file">
-            <button type="button" onclick="uploadPhotoPerro()">Subir foto del perro</button>
-        </form>
-    </section>
 
-
-    <section id="favoritesDogs">
-        <h2>Perros Favoritos</h2>
-    </section>
-
-    
-
-
-    
-
-    
-
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="javascript.js"></script>
 </body>
 </html>

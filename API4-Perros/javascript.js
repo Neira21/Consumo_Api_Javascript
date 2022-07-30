@@ -12,7 +12,14 @@
 const URL = `https://api.thecatapi.com/v1/images/search${querystring}`;
 */
 
-let API_URL_RANDOM = "https://api.thedogapi.com/v1/images/search?limit=2" 
+// const api = axios.create({
+//     baseURL: 'https://api.thecatapi.com/v1',
+// });
+// api.defaults.headers.common['X-API-KEY'] = 'd7e5c5bd-fbb0-494a-8e0c-4cadf28397d0';
+
+
+
+let API_URL_RANDOM = "https://api.thedogapi.com/v1/images/search?limit=3" 
 let API_URL_FAVORITES = "https://api.thedogapi.com/v1/favourites" 
 let API_URL_FAVORITES_DELETE = (id) => `https://api.thedogapi.com/v1/favourites/${id}`
 let API_URL_UPLOADIMAGE = "https://api.thedogapi.com/v1/images/upload"
@@ -34,13 +41,17 @@ async function LoadRandomDogs(){
     }else{
         const img1 = document.getElementById('img1')
         const img2 = document.getElementById('img2')
+        const img3 = document.getElementById('img3')
         const btn1 = document.getElementById('btn1')
         const btn2 = document.getElementById('btn2')
+        const btn3 = document.getElementById('btn3')
         btn1.onclick = () => saveFavoriteDog(data[0].id);
         btn2.onclick = () => saveFavoriteDog(data[1].id);
+        btn3.onclick = () => saveFavoriteDog(data[2].id);
         //const img3 = document.getElementById('img3')
         img1.src = data[0].url;
         img2.src = data[1].url;
+        img3.src = data[2].url;
         //img3.src = data[2].url;       
     }
 }
@@ -60,17 +71,16 @@ async function LoadFavoritesDogs(){
     }else{
         const section = document.getElementById("favoritesDogs");
         section.innerHTML = "";
-        const h2 = document.createElement("h2");
-        const h2Text = document.createTextNode("Perros favoritos");
-        h2.appendChild(h2Text);
-        section.appendChild(h2);
         data.forEach(element => {
             
             const article = document.createElement("article");
             const imagen = document.createElement("img");
             const btn = document.createElement("button");
-            const btnText = document .createTextNode('Sacar la Imagen en favoritos')
+            const btnText = document .createTextNode('Eliminar')
             
+            article.className ="item-favorites-dogs";
+            btn.className = "btn-favorites-dogs";
+
             btn.appendChild(btnText);
             if(element.image.url){
                 imagen.src=element.image.url;
@@ -85,6 +95,11 @@ async function LoadFavoritesDogs(){
 }
 
 async function saveFavoriteDog(id){
+    
+    // const {data, status} = await api.post('/favourites',{
+    //     image_id:id,
+    // });
+
     const rest = await fetch(API_URL_FAVORITES, {
         method: "POST",
         headers: {
@@ -96,6 +111,8 @@ async function saveFavoriteDog(id){
         })
     })
     const data = await rest.json();
+    
+    
     console.log("Save favorite dog: ");
     console.log(rest);
     if(rest.status !== 200){
