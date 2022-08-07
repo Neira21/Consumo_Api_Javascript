@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;500;600;700&family=Roboto+Mono:ital,wght@1,700&family=Work+Sans:wght@600&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+  font-family: 'Work Sans', sans-serif;
+  color: whitesmoke;
+  
+}
+
+header{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  padding: 20px;
+  background-color: #2B4865;
+}
+
+img{
+  height: 200px;
+  width: 200px;
+  border-radius: 20px;
+}
+
+
+
+h2{
+  font-size: 2.5rem;
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  padding-top: 30px;
+}
+
+
+#container{
+  width: 100%;
+  background-color: #002B5B;
+}
+
+
+.section1-perros-aleatorios{
+  margin: 15px 0 35px 0;
+}
+
+.contenedor-articulos{
+    display: flex;
+    place-content: center;
+    padding: 20px 5px 20px 5px;
+}
+
+#item-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 30px;
+    gap: 10px;   
+}
+
+.save-button{
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 20px;
+  transition-duration: 400ms;
+  background-color: #2B4865;
+  color: #ffffff;
+  font-family: 'Work Sans', sans-serif;
+}
+.save-button:hover{
+  background-color: #256D85;
+  color: whitesmoke;
+}
+  
+#reload-button{
+  font-family: 'Work Sans', sans-serif;
+  display: flex;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  border-radius: 20px;
+  font-size: 50px;
+  padding: 10px 25px;
+  background-color: #2B4865;
+  transition-duration: 400ms;
+  color: #ffffff;
+  cursor: pointer;
+}
+#reload-button:hover{
+  background-color: #256D85;
+  color: whitesmoke;
+}
+
+
+.section2-perros-subirimagen{
+  margin: 15px 0 35px 0;
+}
+
+.form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  gap: 10px;
+}
+
+.form input{
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid #2B4865;
+  font-size: 1.2rem;
+  color: #2B4865;
+  
+}
+
+.form button{
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 20px;
+  transition-duration: 400ms;
+  background-color: #2B4865;
+  color: #ffffff;
+  font-family: 'Work Sans', sans-serif;
+}
+
+.form button:hover{
+  background-color: #256D85;
+  color: whitesmoke;
+}
+
+
+
+
+.section3-perros-favoritos{
+  
+  display: flex;
+  justify-content: center;
+  
+}
+
+.container-favorites-dogs{
+  margin : 20px 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 30px;
+}
+
+.item-favorites-dogs{
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border: #ffffff 2px solid;
+  
+}
+
+.btn-favorites-dogs {
+  color: #ffffff;
+  border-radius: 20px;
+  background-color: #2B4865;
+  font-size: 20px;
+  padding: 10px 25px;
+  margin-left: 10px;
+  cursor: pointer;
+  transition-duration: 400ms;
+  height: 25%;
+}
+
+.btn-favorites-dogs:hover{
+  background-color: #256D85;
+  color: whitesmoke;
+}
+
+
+
+footer{
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  color: #002B5B;
+  padding: 15px;
+  background-color: #2B4865;
+}
+footer p{
+  color: #ffffff;
+  font-size: 20px;
+  margin: 20px 5px;
+}
+
+footer i{
+  font-size: 1.8rem;
+  transition-duration: 400ms;
+  color: white;
+}
+footer i:hover{
+  text-shadow: rgba(255, 255, 255, 0.25) 0px 14px 28px, rgba(255, 255, 255, 0.22) 0px 10px 10px;
+  font-size: 2.2rem;
+}
+
+ul{
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+
